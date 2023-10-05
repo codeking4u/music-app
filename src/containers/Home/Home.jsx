@@ -56,7 +56,11 @@ function Home() {
             <HomeFilter onLevelFilterChange={handleLevelFilterChange} />
           </aside>
           <section className="song-list-section">
-            <SongList songs={filteredSongs} />
+            {songs.length > 0 ? (
+              <SongList songs={filteredSongs} />
+            ) : (
+              "Loading songs"
+            )}
           </section>
         </div>
       </main>

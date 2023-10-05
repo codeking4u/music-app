@@ -1,17 +1,17 @@
 import React from "react";
+import SongItem from "./SongItem";
 
 function SongList({ songs }) {
   return (
     <div className="song-list">
       {songs.map((song) => (
-        <div key={song.id} className="song-item">
-          <img src={song.images} alt={song.title} className="song-image" />
-          <div className="song-details">
-            <h3 className="song-title">{song.title}</h3>
-            <p className="song-artist">{song.artist}</p>
-            <p className="song-level">Level {song.level}</p>
-          </div>
-        </div>
+        <SongItem
+          key={song.id}
+          images={song.images}
+          title={song.title}
+          artist={song.artist}
+          level={song.level}
+        />
       ))}
     </div>
   );
